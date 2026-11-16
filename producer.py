@@ -1,49 +1,27 @@
-"""
-producer.py
-----------------
-This file contains the logic for a Producer that simulates a real-time data
-stream by reading events from a CSV file and sending them one by one into a queue.
-
-"""
+"""Read transaction rows from a CSV file and publish them to a queue."""
 
 import csv
 import time
-import random
+from pathlib import Path
 from queue import Queue
+
+
+DEFAULT_CSV = Path(__file__).with_name("transactions.csv")
+
 
 class CSVProducer:
     def __init__(self, csv_path, q, delay=1.0):
-        """
-        PARAMETERS:
-        - csv_path : path to the CSV file (str)
-        - q        : queue acting as our 'topic'
-        - delay    : time to wait between sending each row (float)
+        self.csv_path = csv_path
+        self.q = q
+        self.delay = delay
 
-       TODO : Implement the __init__ method to initialize the producer.
-       """
     def start(self):
-        """
-        This method should:
-        1. Open the CSV file.
-        2. Loop through each row 
-        3. Print the row being sent.
-        4. Push it into the queue 
-        5. Sleep for 'delay' seconds to simulate streaming.
+        with open(self.csv_path, encoding="utf-8-sig", newline="") as source:
+            for event in csv.DictReader(source):
+                print(f"Produced: {event}", flush=True)
+                self.q.put(event)
+                time.sleep(self.delay)
 
-        TODO:
-        - Implement the streaming behavior.
-        - Optional: Add random jitter to simulate irregular network delays.
-        """
-      
-
-
-# Debugging test
 
 if __name__ == "__main__":
-    """
-    Run this file alone to test your producer.
-
-    Expected behavior:
-    - It should print rows from the CSV file every 'delay' seconds.
-    """
-   
+    CSVProducer(DEFAULT_CSV, Queue()).start()
