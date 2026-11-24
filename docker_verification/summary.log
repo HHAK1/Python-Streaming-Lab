@@ -1,0 +1,14 @@
+2026-11-24T20:09:07.3567230Z Ran 7 tests in 0.006s
+2026-11-24T20:09:57.5131847Z All CLI assertions passed. Read evidence/commands.log and REPORT.md.
+2026-11-24T20:09:58.5708050Z csv_produce 200
+2026-11-24T20:09:59.4219402Z csv_first17 {'processed': 17, 'valid': 17, 'invalid': 0}
+2026-11-24T20:10:00.1194279Z csv_resume183 {'processed': 183, 'valid': 183, 'invalid': 0}
+2026-11-24T20:10:03.3319217Z csv_resume_empty {'processed': 0, 'valid': 0, 'invalid': 0}
+2026-11-24T20:10:03.9592963Z csv_newgroup_replay {'processed': 200, 'valid': 200, 'invalid': 0}
+2026-11-24T20:10:04.5172355Z dirty_csv_consume {'processed': 14, 'valid': 7, 'invalid': 7}
+2026-11-24T20:10:07.4818648Z json_clean_produce {'accepted': 200, 'rejected': 0}
+2026-11-24T20:10:08.3857570Z json_clean_route {'processed': 200, 'accepted': 200, 'rejected': 0}
+2026-11-24T20:10:08.8240688Z json_dirty_produce {'accepted': 6, 'rejected': 8}
+2026-11-24T20:10:09.8930683Z schema_evolution {'processed': 7, 'accepted': 2, 'rejected': 5}
+2026-11-24T20:10:11.4882943Z json_replay {'processed': 200, 'accepted': 200, 'rejected': 0}
+2026-11-24T20:10:11.8038208Z ALL REAL-BROKER CHECKS PASSED

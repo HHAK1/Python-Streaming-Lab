@@ -1,5 +1,7 @@
 # Datalakes and Streaming — Harutyun Hakobyan
 
+**Docker verification: passed.** [Execution results and evidence](KAFKA_VERIFICATION.md).
+
 | Lab | Deliverable |
 |---|---|
 | 1: Python queue-based streaming | Original producer, consumer and pipeline below |
