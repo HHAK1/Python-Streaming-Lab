@@ -1,0 +1,15 @@
+{"source_line": 2, "partition": 2, "offset": 0, "raw_csv": "1,101,19.99,2024-01-01 10:00:05"}
+{"source_line": 3, "partition": 0, "offset": 0, "raw_csv": "2,102,250.5,2024-01-01 10:00:20"}
+{"source_line": 4, "partition": 2, "offset": 1, "raw_csv": "3,101,,2024-01-01 10:01:10"}
+{"source_line": 5, "partition": 0, "offset": 1, "raw_csv": "4,abc,89.9,2024-01-01 10:02:00"}
+{"source_line": 6, "partition": 2, "offset": 2, "raw_csv": "5,104,42.75,2024-01-01 10:02:45"}
+{"source_line": 7, "partition": 0, "offset": 2, "raw_csv": "6,102,15.2,not-a-date"}
+{"source_line": 8, "partition": 2, "offset": 3, "raw_csv": "7,105,310.0,2024-01-01 10:04:10"}
+{"source_line": 9, "partition": 2, "offset": 4, "raw_csv": "8,101,12.99,2024-01-01 10:05:00"}
+{"source_line": 10, "partition": 0, "offset": 3, "raw_csv": "9,106,seven,2024-01-01 10:05:40"}
+{"source_line": 11, "partition": 2, "offset": 5, "raw_csv": "10,104,199.99,2024-01-01 10:06:15"}
+{"source_line": 12, "partition": 0, "offset": 4, "raw_csv": "2,102,250.5,2024-01-01 10:00:20"}
+{"source_line": 13, "partition": 0, "offset": 5, "raw_csv": "11,107,55.0,"}
+{"source_line": 14, "partition": 0, "offset": 6, "raw_csv": "12,108,20.0,2024/01/01 10:10:00"}
+{"source_line": 15, "partition": 0, "offset": 7, "raw_csv": "13,109"}
+{"summary": 14}

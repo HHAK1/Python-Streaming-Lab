@@ -1,0 +1,4 @@
+
+GROUP               CONSUMER-ID                                HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
+lab2-1795550488-two two-2-054fd201-327f-4664-a0df-0267eb7c8754 /127.0.0.1      two-2           1               transactions(2)
+lab2-1795550488-two two-1-96e077cf-2c05-4e61-86c3-c7d9a756e7a0 /127.0.0.1      two-1           2               transactions(0,1)

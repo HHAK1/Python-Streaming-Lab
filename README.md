@@ -1,3 +1,15 @@
+# Datalakes and Streaming — Harutyun Hakobyan
+
+| Lab | Deliverable |
+|---|---|
+| 1: Python queue-based streaming | Original producer, consumer and pipeline below |
+| 2: Hands-on Kafka CLI | [Commands, observations and answers](lab2_kafka_cli/REPORT.md) |
+| 3: Kafka CSV/JSON streaming | [Code and run instructions](lab3_kafka_streaming/README.md), [measured results](lab3_kafka_streaming/REPORT.md) |
+
+The Kafka labs include the teacher's source instructions and datasets, actual execution evidence and a Docker verification workflow. Their reports disclose AI assistance and the tested runtime. The course tracking sheet receives this account's GitHub link.
+
+---
+
 # Lab 1: Python Streaming Lab — Producer & Consumer Using CSV
 
 In this lab, you will build a **simple streaming system** using only Python standard libraries.

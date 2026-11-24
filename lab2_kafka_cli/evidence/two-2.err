@@ -1,0 +1,5 @@
++ local tool=console-consumer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-two --consumer-property client.id=two-2 --from-beginning --property print.partition=true --property print.offset=true
+Processed a total of 12 messages

@@ -1,0 +1,6 @@
+
+GROUP                CONSUMER-ID                                 HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
+lab2-1795550488-four four-1-87291516-b543-43a2-86a3-6b783e6c5e1b /127.0.0.1      four-1          1               transactions(0)
+lab2-1795550488-four four-2-15dc7603-6cb6-4895-a2d7-8faa9f636d41 /127.0.0.1      four-2          1               transactions(1)
+lab2-1795550488-four four-3-ad38d75f-ac14-4a5c-a112-c923a54e9562 /127.0.0.1      four-3          1               transactions(2)
+lab2-1795550488-four four-4-12fc8f02-142e-40d4-aae4-5ab1d8e1b342 /127.0.0.1      four-4          0               -

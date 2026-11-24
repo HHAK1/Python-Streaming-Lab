@@ -1,0 +1,3 @@
+Partition:0	Offset:0	first
+Partition:0	Offset:1	second
+Partition:0	Offset:2	third

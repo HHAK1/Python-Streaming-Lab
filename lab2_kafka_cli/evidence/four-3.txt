@@ -1,0 +1,12 @@
+Partition:2	Offset:0	event-1
+Partition:2	Offset:1	event-2
+Partition:2	Offset:2	event-3
+Partition:2	Offset:3	event-4
+Partition:2	Offset:4	event-5
+Partition:2	Offset:5	event-6
+Partition:2	Offset:6	event-7
+Partition:2	Offset:7	event-8
+Partition:2	Offset:8	event-9
+Partition:2	Offset:9	event-10
+Partition:2	Offset:10	event-11
+Partition:2	Offset:11	event-12

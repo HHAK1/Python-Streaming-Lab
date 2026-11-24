@@ -1,0 +1,1 @@
+All CLI assertions passed. Read evidence/commands.log and REPORT.md.

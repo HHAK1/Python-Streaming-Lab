@@ -1,0 +1,131 @@
+{
+  "run_id": "verify_cc36b3b9",
+  "bootstrap": "localhost:9092",
+  "broker_mode": "native Kafka 3.5.2",
+  "checks": {
+    "csv_produce": 200,
+    "csv_first17": {
+      "processed": 17,
+      "valid": 17,
+      "invalid": 0
+    },
+    "csv_resume183": {
+      "processed": 183,
+      "valid": 183,
+      "invalid": 0
+    },
+    "csv_resume_empty": {
+      "processed": 0,
+      "valid": 0,
+      "invalid": 0
+    },
+    "csv_newgroup_replay": {
+      "processed": 200,
+      "valid": 200,
+      "invalid": 0
+    },
+    "dirty_csv_produce": 14,
+    "dirty_csv_consume": {
+      "processed": 14,
+      "valid": 7,
+      "invalid": 7
+    },
+    "assignments_2": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "assignments_4": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      []
+    ],
+    "partition_increase": {
+      "before": 3,
+      "after": 5
+    },
+    "json_clean_produce": {
+      "accepted": 200,
+      "rejected": 0
+    },
+    "json_clean_route": {
+      "processed": 200,
+      "accepted": 200,
+      "rejected": 0
+    },
+    "json_dirty_produce": {
+      "accepted": 6,
+      "rejected": 8
+    },
+    "dirty_reasons": [
+      {
+        "source_line": 7,
+        "raw_csv": "6,102,15.2,not-a-date",
+        "reason": "timestamp must be ISO 8601"
+      },
+      {
+        "source_line": 5,
+        "raw_csv": "4,abc,89.9,2024-01-01 10:02:00",
+        "reason": "user_id must be a positive integer"
+      },
+      {
+        "source_line": 12,
+        "raw_csv": "2,102,250.5,2024-01-01 10:00:20",
+        "reason": "duplicate transaction_id"
+      },
+      {
+        "source_line": 13,
+        "raw_csv": "11,107,55.0,",
+        "reason": "missing required transaction field"
+      },
+      {
+        "source_line": 14,
+        "raw_csv": "12,108,20.0,2024/01/01 10:10:00",
+        "reason": "timestamp must be ISO 8601"
+      },
+      {
+        "source_line": 15,
+        "raw_csv": "13,109",
+        "reason": "expected 4 fields, found 2"
+      },
+      {
+        "source_line": 4,
+        "raw_csv": "3,101,,2024-01-01 10:01:10",
+        "reason": "missing required transaction field"
+      },
+      {
+        "source_line": 10,
+        "raw_csv": "9,106,seven,2024-01-01 10:05:40",
+        "reason": "amount is not numeric"
+      }
+    ],
+    "schema_evolution": {
+      "processed": 7,
+      "accepted": 2,
+      "rejected": 5
+    },
+    "json_replay": {
+      "processed": 200,
+      "accepted": 200,
+      "rejected": 0
+    },
+    "replay_output_records": 400,
+    "all_checks_passed": true,
+    "ordering": {
+      "per_user_in_order": true,
+      "per_partition_offsets_in_order": true,
+      "partition_count": 3
+    }
+  }
+}

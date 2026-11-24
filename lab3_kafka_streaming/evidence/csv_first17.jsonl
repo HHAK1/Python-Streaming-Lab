@@ -1,0 +1,18 @@
+{"partition": 1, "offset": 0, "raw_csv": "4,110,315.02,2024-01-01 10:01:02", "status": "valid"}
+{"partition": 1, "offset": 1, "raw_csv": "5,110,84.83,2024-01-01 10:01:19", "status": "valid"}
+{"partition": 1, "offset": 2, "raw_csv": "18,110,331.33,2024-01-01 10:06:06", "status": "valid"}
+{"partition": 1, "offset": 3, "raw_csv": "23,110,256.05,2024-01-01 10:07:55", "status": "valid"}
+{"partition": 1, "offset": 4, "raw_csv": "31,110,40.08,2024-01-01 10:11:39", "status": "valid"}
+{"partition": 1, "offset": 5, "raw_csv": "49,110,278.65,2024-01-01 10:18:24", "status": "valid"}
+{"partition": 1, "offset": 6, "raw_csv": "63,110,316.44,2024-01-01 10:24:06", "status": "valid"}
+{"partition": 1, "offset": 7, "raw_csv": "75,110,306.37,2024-01-01 10:28:17", "status": "valid"}
+{"partition": 1, "offset": 8, "raw_csv": "77,110,463.52,2024-01-01 10:28:52", "status": "valid"}
+{"partition": 1, "offset": 9, "raw_csv": "132,110,200.34,2024-01-01 10:48:11", "status": "valid"}
+{"partition": 1, "offset": 10, "raw_csv": "139,110,497.23,2024-01-01 10:50:46", "status": "valid"}
+{"partition": 1, "offset": 11, "raw_csv": "168,110,422.8,2024-01-01 11:01:45", "status": "valid"}
+{"partition": 0, "offset": 0, "raw_csv": "6,102,474.14,2024-01-01 10:01:28", "status": "valid"}
+{"partition": 0, "offset": 1, "raw_csv": "8,102,105.6,2024-01-01 10:02:16", "status": "valid"}
+{"partition": 0, "offset": 2, "raw_csv": "10,106,170.17,2024-01-01 10:03:09", "status": "valid"}
+{"partition": 0, "offset": 3, "raw_csv": "12,102,272.85,2024-01-01 10:03:52", "status": "valid"}
+{"partition": 0, "offset": 4, "raw_csv": "13,108,227.74,2024-01-01 10:04:29", "status": "valid"}
+{"summary": {"processed": 17, "valid": 17, "invalid": 0}}

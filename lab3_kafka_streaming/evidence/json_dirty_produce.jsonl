@@ -1,0 +1,15 @@
+{"source_line": 2, "status": "accepted", "event": {"transaction_id": 1, "user_id": 101, "amount": "19.99", "timestamp": "2024-01-01 10:00:05", "schema_version": 1}}
+{"source_line": 3, "status": "accepted", "event": {"transaction_id": 2, "user_id": 102, "amount": "250.50", "timestamp": "2024-01-01 10:00:20", "schema_version": 1}}
+{"source_line": 4, "status": "rejected", "reason": "missing required transaction field"}
+{"source_line": 5, "status": "rejected", "reason": "user_id must be a positive integer"}
+{"source_line": 6, "status": "accepted", "event": {"transaction_id": 5, "user_id": 104, "amount": "42.75", "timestamp": "2024-01-01 10:02:45", "schema_version": 1}}
+{"source_line": 7, "status": "rejected", "reason": "timestamp must be ISO 8601"}
+{"source_line": 8, "status": "accepted", "event": {"transaction_id": 7, "user_id": 105, "amount": "310.00", "timestamp": "2024-01-01 10:04:10", "schema_version": 1}}
+{"source_line": 9, "status": "accepted", "event": {"transaction_id": 8, "user_id": 101, "amount": "12.99", "timestamp": "2024-01-01 10:05:00", "schema_version": 1}}
+{"source_line": 10, "status": "rejected", "reason": "amount is not numeric"}
+{"source_line": 11, "status": "accepted", "event": {"transaction_id": 10, "user_id": 104, "amount": "199.99", "timestamp": "2024-01-01 10:06:15", "schema_version": 1}}
+{"source_line": 12, "status": "rejected", "reason": "duplicate transaction_id"}
+{"source_line": 13, "status": "rejected", "reason": "missing required transaction field"}
+{"source_line": 14, "status": "rejected", "reason": "timestamp must be ISO 8601"}
+{"source_line": 15, "status": "rejected", "reason": "expected 4 fields, found 2"}
+{"summary": {"accepted": 6, "rejected": 8}}

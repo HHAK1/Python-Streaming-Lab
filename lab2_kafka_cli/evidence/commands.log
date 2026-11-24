@@ -1,0 +1,247 @@
+Execution mode: Native Apache Kafka 3.5.2 / KRaft
+Broker: localhost:9092; group prefix: lab2-1795550488
++ cli broker-api-versions --bootstrap-server localhost:9092
++ local tool=broker-api-versions
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092
+127.0.0.1:9092 (id: 1 rack: null) -> (
+	Produce(0): 0 to 9 [usable: 9],
+	Fetch(1): 0 to 15 [usable: 15],
+	ListOffsets(2): 0 to 8 [usable: 8],
+	Metadata(3): 0 to 12 [usable: 12],
+	LeaderAndIsr(4): UNSUPPORTED,
+	StopReplica(5): UNSUPPORTED,
+	UpdateMetadata(6): UNSUPPORTED,
+	ControlledShutdown(7): UNSUPPORTED,
+	OffsetCommit(8): 0 to 8 [usable: 8],
+	OffsetFetch(9): 0 to 8 [usable: 8],
+	FindCoordinator(10): 0 to 4 [usable: 4],
+	JoinGroup(11): 0 to 9 [usable: 9],
+	Heartbeat(12): 0 to 4 [usable: 4],
+	LeaveGroup(13): 0 to 5 [usable: 5],
+	SyncGroup(14): 0 to 5 [usable: 5],
+	DescribeGroups(15): 0 to 5 [usable: 5],
+	ListGroups(16): 0 to 4 [usable: 4],
+	SaslHandshake(17): 0 to 1 [usable: 1],
+	ApiVersions(18): 0 to 3 [usable: 3],
+	CreateTopics(19): 0 to 7 [usable: 7],
+	DeleteTopics(20): 0 to 6 [usable: 6],
+	DeleteRecords(21): 0 to 2 [usable: 2],
+	InitProducerId(22): 0 to 4 [usable: 4],
+	OffsetForLeaderEpoch(23): 0 to 4 [usable: 4],
+	AddPartitionsToTxn(24): 0 to 3 [usable: 3],
+	AddOffsetsToTxn(25): 0 to 3 [usable: 3],
+	EndTxn(26): 0 to 3 [usable: 3],
+	WriteTxnMarkers(27): 0 to 1 [usable: 1],
+	TxnOffsetCommit(28): 0 to 3 [usable: 3],
+	DescribeAcls(29): 0 to 3 [usable: 3],
+	CreateAcls(30): 0 to 3 [usable: 3],
+	DeleteAcls(31): 0 to 3 [usable: 3],
+	DescribeConfigs(32): 0 to 4 [usable: 4],
+	AlterConfigs(33): 0 to 2 [usable: 2],
+	AlterReplicaLogDirs(34): 0 to 2 [usable: 2],
+	DescribeLogDirs(35): 0 to 4 [usable: 4],
+	SaslAuthenticate(36): 0 to 2 [usable: 2],
+	CreatePartitions(37): 0 to 3 [usable: 3],
+	CreateDelegationToken(38): UNSUPPORTED,
+	RenewDelegationToken(39): UNSUPPORTED,
+	ExpireDelegationToken(40): UNSUPPORTED,
+	DescribeDelegationToken(41): UNSUPPORTED,
+	DeleteGroups(42): 0 to 2 [usable: 2],
+	ElectLeaders(43): 0 to 2 [usable: 2],
+	IncrementalAlterConfigs(44): 0 to 1 [usable: 1],
+	AlterPartitionReassignments(45): 0 [usable: 0],
+	ListPartitionReassignments(46): 0 [usable: 0],
+	OffsetDelete(47): 0 [usable: 0],
+	DescribeClientQuotas(48): 0 to 1 [usable: 1],
+	AlterClientQuotas(49): 0 to 1 [usable: 1],
+	DescribeUserScramCredentials(50): 0 [usable: 0],
+	AlterUserScramCredentials(51): 0 [usable: 0],
+	DescribeQuorum(55): 0 to 1 [usable: 1],
+	AlterPartition(56): UNSUPPORTED,
+	UpdateFeatures(57): 0 to 1 [usable: 1],
+	Envelope(58): UNSUPPORTED,
+	DescribeCluster(60): 0 [usable: 0],
+	DescribeProducers(61): 0 [usable: 0],
+	UnregisterBroker(64): 0 [usable: 0],
+	DescribeTransactions(65): 0 [usable: 0],
+	ListTransactions(66): 0 [usable: 0],
+	AllocateProducerIds(67): UNSUPPORTED,
+	ConsumerGroupHeartbeat(68): UNSUPPORTED
+)
++ cli topics --bootstrap-server localhost:9092 --create --topic transactions --partitions 1 --replication-factor 1
++ local tool=topics
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic transactions --partitions 1 --replication-factor 1
+Created topic transactions.
++ cli topics --bootstrap-server localhost:9092 --describe --topic transactions
++ local tool=topics
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic transactions
+Topic: transactions	TopicId: ELfdqfrlRtiytTEFXC5z6Q	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: transactions	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
++ printf 'first\nsecond\nthird\n'
++ cli console-producer --bootstrap-server localhost:9092 --topic transactions
++ local tool=console-producer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic transactions
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 3 --consumer-property auto.commit.interval.ms=100 --consumer-property max.poll.records=1 --property print.partition=true --property print.offset=true
++ local tool=console-consumer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 3 --consumer-property auto.commit.interval.ms=100 --consumer-property max.poll.records=1 --property print.partition=true --property print.offset=true
+Processed a total of 3 messages
++ cli consumer-groups --bootstrap-server localhost:9092 --describe --group lab2-1795550488-resume
++ local tool=consumer-groups
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group lab2-1795550488-resume
+
+Consumer group 'lab2-1795550488-resume' has no active members.
+
+GROUP                  TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+lab2-1795550488-resume transactions    0          3               3               0               -               -               -
++ printf 'fourth\nfifth\n'
++ cli console-producer --bootstrap-server localhost:9092 --topic transactions
++ local tool=console-producer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic transactions
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 2 --consumer-property max.poll.records=1 --property print.partition=true --property print.offset=true
++ local tool=console-consumer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 2 --consumer-property max.poll.records=1 --property print.partition=true --property print.offset=true
+Processed a total of 2 messages
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-new --from-beginning --max-messages 5 --property print.partition=true --property print.offset=true
++ local tool=console-consumer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-new --from-beginning --max-messages 5 --property print.partition=true --property print.offset=true
+Processed a total of 5 messages
++ cli consumer-groups --bootstrap-server localhost:9092 --describe --group lab2-1795550488-resume
++ local tool=consumer-groups
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group lab2-1795550488-resume
+
+Consumer group 'lab2-1795550488-resume' has no active members.
+
+GROUP                  TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+lab2-1795550488-resume transactions    0          5               5               0               -               -               -
++ cli consumer-groups --bootstrap-server localhost:9092 --group lab2-1795550488-resume --topic transactions --reset-offsets --to-earliest --execute
++ local tool=consumer-groups
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group lab2-1795550488-resume --topic transactions --reset-offsets --to-earliest --execute
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+lab2-1795550488-resume         transactions                   0          0              
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 5 --property print.partition=true --property print.offset=true
++ local tool=console-consumer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-resume --from-beginning --max-messages 5 --property print.partition=true --property print.offset=true
+Processed a total of 5 messages
++ cli topics --bootstrap-server localhost:9092 --alter --topic transactions --partitions 3
++ local tool=topics
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic transactions --partitions 3
++ cli topics --bootstrap-server localhost:9092 --describe --topic transactions
++ local tool=topics
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic transactions
+Topic: transactions	TopicId: ELfdqfrlRtiytTEFXC5z6Q	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: transactions	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+	Topic: transactions	Partition: 1	Leader: 1	Replicas: 1	Isr: 1
+	Topic: transactions	Partition: 2	Leader: 1	Replicas: 1	Isr: 1
++ for i in 1 2
++ PIDS+=("$!")
++ for i in 1 2
++ PIDS+=("$!")
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-two --consumer-property client.id=two-1 --from-beginning --property print.partition=true --property print.offset=true
++ sleep 8
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-two --consumer-property client.id=two-2 --from-beginning --property print.partition=true --property print.offset=true
++ cli consumer-groups --bootstrap-server localhost:9092 --describe --group lab2-1795550488-two --members --verbose
++ local tool=consumer-groups
++ shift
++ tee evidence/two-members.txt
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group lab2-1795550488-two --members --verbose
+
+GROUP               CONSUMER-ID                                HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
+lab2-1795550488-two two-2-054fd201-327f-4664-a0df-0267eb7c8754 /127.0.0.1      two-2           1               transactions(2)
+lab2-1795550488-two two-1-96e077cf-2c05-4e61-86c3-c7d9a756e7a0 /127.0.0.1      two-1           2               transactions(0,1)
++ for i in 1 2 3 4
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-four --consumer-property client.id=four-1 --from-beginning --property print.partition=true --property print.offset=true
++ PIDS+=("$!")
++ for i in 1 2 3 4
++ PIDS+=("$!")
++ for i in 1 2 3 4
++ PIDS+=("$!")
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-four --consumer-property client.id=four-3 --from-beginning --property print.partition=true --property print.offset=true
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-four --consumer-property client.id=four-2 --from-beginning --property print.partition=true --property print.offset=true
++ for i in 1 2 3 4
++ PIDS+=("$!")
++ sleep 10
++ cli console-consumer --bootstrap-server localhost:9092 --topic transactions --group lab2-1795550488-four --consumer-property client.id=four-4 --from-beginning --property print.partition=true --property print.offset=true
++ cli console-producer --bootstrap-server localhost:9092 --topic transactions
++ local tool=console-producer
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic transactions
+++ seq 1 12
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 1
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 2
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 3
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 4
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 5
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 6
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 7
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 8
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 9
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 10
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 11
++ for i in $(seq 1 12)
++ printf 'event-%s\n' 12
++ sleep 2
++ cli consumer-groups --bootstrap-server localhost:9092 --describe --group lab2-1795550488-four --members --verbose
++ tee evidence/four-members.txt
++ local tool=consumer-groups
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group lab2-1795550488-four --members --verbose
+
+GROUP                CONSUMER-ID                                 HOST            CLIENT-ID       #PARTITIONS     ASSIGNMENT
+lab2-1795550488-four four-1-87291516-b543-43a2-86a3-6b783e6c5e1b /127.0.0.1      four-1          1               transactions(0)
+lab2-1795550488-four four-2-15dc7603-6cb6-4895-a2d7-8faa9f636d41 /127.0.0.1      four-2          1               transactions(1)
+lab2-1795550488-four four-3-ad38d75f-ac14-4a5c-a112-c923a54e9562 /127.0.0.1      four-3          1               transactions(2)
+lab2-1795550488-four four-4-12fc8f02-142e-40d4-aae4-5ab1d8e1b342 /127.0.0.1      four-4          0               -
++ cli consumer-groups --bootstrap-server localhost:9092 --describe --group lab2-1795550488-four
++ local tool=consumer-groups
++ shift
++ [[ -n /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin ]]
++ /workspace/scratch/6090f439229c/streaming_runtime/kafka_2.13-3.5.2/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group lab2-1795550488-four
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                 HOST            CLIENT-ID
+lab2-1795550488-four transactions    0          5               5               0               four-1-87291516-b543-43a2-86a3-6b783e6c5e1b /127.0.0.1      four-1
+lab2-1795550488-four transactions    1          0               0               0               four-2-15dc7603-6cb6-4895-a2d7-8faa9f636d41 /127.0.0.1      four-2
+lab2-1795550488-four transactions    2          12              12              0               four-3-ad38d75f-ac14-4a5c-a112-c923a54e9562 /127.0.0.1      four-3
++ set +x

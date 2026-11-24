@@ -1,0 +1,41 @@
+name: Kafka labs — Docker verification
+on:
+  push:
+    paths: ['lab2_kafka_cli/**', 'lab3_kafka_streaming/**', '.github/workflows/kafka-labs.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r lab3_kafka_streaming/requirements.txt
+      - name: Start Docker Kafka
+        run: docker compose -f lab2_kafka_cli/docker-compose.yml up -d --wait --wait-timeout 180
+      - name: Schema tests
+        run: python -m unittest discover -s lab3_kafka_streaming/tests -p 'test_*.py' -v
+      - name: Kafka CLI lab
+        run: bash lab2_kafka_cli/run_lab.sh
+      - name: CSV and JSON real-broker verification
+        env:
+          BROKER_MODE: Docker Compose / Confluent 7.5.0
+        run: python lab3_kafka_streaming/tests/integration.py
+      - name: Retain actual observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kafka-lab-evidence
+          path: |
+            lab2_kafka_cli/evidence/
+            lab3_kafka_streaming/evidence/
+      - name: Broker logs
+        if: failure()
+        run: docker compose -f lab2_kafka_cli/docker-compose.yml logs --tail=100
+      - name: Stop lab broker
+        if: always()
+        run: docker compose -f lab2_kafka_cli/docker-compose.yml down -v
