@@ -15,6 +15,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r lab3_kafka_streaming/requirements.txt
+      - name: Prepare fresh evidence
+        run: |
+          rm -rf lab2_kafka_cli/evidence lab3_kafka_streaming/evidence
+          mkdir -p lab2_kafka_cli/evidence lab3_kafka_streaming/evidence
       - name: Start Docker Kafka
         run: docker compose -f lab2_kafka_cli/docker-compose.yml up -d --wait --wait-timeout 180
       - name: Schema tests

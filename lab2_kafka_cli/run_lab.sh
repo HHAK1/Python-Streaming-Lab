@@ -46,7 +46,7 @@ cli() {
   cli topics --bootstrap-server "$BOOTSTRAP" --describe --topic transactions
   for i in 1 2; do
     cli console-consumer --bootstrap-server "$BOOTSTRAP" --topic transactions --group "$GROUP-two" \
-      --consumer-property client.id="two-$i" --from-beginning \
+      --consumer-property client.id="two-$i" --from-beginning --timeout-ms 45000 \
       --property print.partition=true --property print.offset=true >"evidence/two-$i.txt" 2>"evidence/two-$i.err" &
     PIDS+=("$!")
   done
@@ -55,7 +55,7 @@ cli() {
     | tee evidence/two-members.txt
   for i in 1 2 3 4; do
     cli console-consumer --bootstrap-server "$BOOTSTRAP" --topic transactions --group "$GROUP-four" \
-      --consumer-property client.id="four-$i" --from-beginning \
+      --consumer-property client.id="four-$i" --from-beginning --timeout-ms 45000 \
       --property print.partition=true --property print.offset=true >"evidence/four-$i.txt" 2>"evidence/four-$i.err" &
     PIDS+=("$!")
   done
